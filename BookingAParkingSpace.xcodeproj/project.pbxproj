@@ -10,20 +10,28 @@
 		844BF24F292D35ED005710AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BF24E292D35ED005710AB /* AppDelegate.swift */; };
 		844BF251292D35ED005710AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BF250292D35ED005710AB /* SceneDelegate.swift */; };
 		844BF253292D35ED005710AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BF252292D35ED005710AB /* ViewController.swift */; };
-		844BF256292D35ED005710AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BF254292D35ED005710AB /* Main.storyboard */; };
 		844BF258292D35EF005710AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844BF257292D35EF005710AB /* Assets.xcassets */; };
-		844BF25B292D35EF005710AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BF259292D35EF005710AB /* LaunchScreen.storyboard */; };
+		844BF264292D46E6005710AB /* Reservations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BF263292D46E6005710AB /* Reservations.swift */; };
+		844BF266292D4734005710AB /* ParkingSpots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BF265292D4734005710AB /* ParkingSpots.swift */; };
+		844BF268292D4784005710AB /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BF267292D4784005710AB /* Employee.swift */; };
+		844BF26A292D47B0005710AB /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BF269292D47B0005710AB /* Car.swift */; };
+		ED8344BD5111865FC059C7C0 /* Pods_BookingAParkingSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9D0F29D642160DD56AB835 /* Pods_BookingAParkingSpace.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		275655D431868E163DE171D2 /* Pods-BookingAParkingSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingAParkingSpace.debug.xcconfig"; path = "Target Support Files/Pods-BookingAParkingSpace/Pods-BookingAParkingSpace.debug.xcconfig"; sourceTree = "<group>"; };
+		5E9D0F29D642160DD56AB835 /* Pods_BookingAParkingSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookingAParkingSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B47618772E4F4D3219290DD /* Pods-BookingAParkingSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingAParkingSpace.release.xcconfig"; path = "Target Support Files/Pods-BookingAParkingSpace/Pods-BookingAParkingSpace.release.xcconfig"; sourceTree = "<group>"; };
 		844BF24B292D35ED005710AB /* BookingAParkingSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookingAParkingSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844BF24E292D35ED005710AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844BF250292D35ED005710AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		844BF252292D35ED005710AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		844BF255292D35ED005710AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		844BF257292D35EF005710AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		844BF25A292D35EF005710AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844BF25C292D35EF005710AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		844BF263292D46E6005710AB /* Reservations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservations.swift; sourceTree = "<group>"; };
+		844BF265292D4734005710AB /* ParkingSpots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSpots.swift; sourceTree = "<group>"; };
+		844BF267292D4784005710AB /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		844BF269292D47B0005710AB /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8344BD5111865FC059C7C0 /* Pods_BookingAParkingSpace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56034CEC3B809AEAD4174DCF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E9D0F29D642160DD56AB835 /* Pods_BookingAParkingSpace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		844BF242292D35ED005710AB = {
 			isa = PBXGroup;
 			children = (
 				844BF24D292D35ED005710AB /* BookingAParkingSpace */,
 				844BF24C292D35ED005710AB /* Products */,
+				E5911C26EDC6192650F76839 /* Pods */,
+				56034CEC3B809AEAD4174DCF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +75,34 @@
 		844BF24D292D35ED005710AB /* BookingAParkingSpace */ = {
 			isa = PBXGroup;
 			children = (
+				844BF262292D45F6005710AB /* Models */,
 				844BF24E292D35ED005710AB /* AppDelegate.swift */,
 				844BF250292D35ED005710AB /* SceneDelegate.swift */,
 				844BF252292D35ED005710AB /* ViewController.swift */,
-				844BF254292D35ED005710AB /* Main.storyboard */,
 				844BF257292D35EF005710AB /* Assets.xcassets */,
-				844BF259292D35EF005710AB /* LaunchScreen.storyboard */,
 				844BF25C292D35EF005710AB /* Info.plist */,
 			);
 			path = BookingAParkingSpace;
+			sourceTree = "<group>";
+		};
+		844BF262292D45F6005710AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				844BF263292D46E6005710AB /* Reservations.swift */,
+				844BF265292D4734005710AB /* ParkingSpots.swift */,
+				844BF267292D4784005710AB /* Employee.swift */,
+				844BF269292D47B0005710AB /* Car.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E5911C26EDC6192650F76839 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				275655D431868E163DE171D2 /* Pods-BookingAParkingSpace.debug.xcconfig */,
+				6B47618772E4F4D3219290DD /* Pods-BookingAParkingSpace.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 844BF25F292D35EF005710AB /* Build configuration list for PBXNativeTarget "BookingAParkingSpace" */;
 			buildPhases = (
+				53C16A6C1B46FAA4665B87F1 /* [CP] Check Pods Manifest.lock */,
 				844BF247292D35ED005710AB /* Sources */,
 				844BF248292D35ED005710AB /* Frameworks */,
 				844BF249292D35ED005710AB /* Resources */,
+				0E0F3B57CB85A5FF691F22BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,13 +165,53 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				844BF25B292D35EF005710AB /* LaunchScreen.storyboard in Resources */,
 				844BF258292D35EF005710AB /* Assets.xcassets in Resources */,
-				844BF256292D35ED005710AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E0F3B57CB85A5FF691F22BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookingAParkingSpace/Pods-BookingAParkingSpace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookingAParkingSpace/Pods-BookingAParkingSpace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookingAParkingSpace/Pods-BookingAParkingSpace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53C16A6C1B46FAA4665B87F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookingAParkingSpace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		844BF247292D35ED005710AB /* Sources */ = {
@@ -139,31 +219,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				844BF253292D35ED005710AB /* ViewController.swift in Sources */,
+				844BF268292D4784005710AB /* Employee.swift in Sources */,
 				844BF24F292D35ED005710AB /* AppDelegate.swift in Sources */,
+				844BF264292D46E6005710AB /* Reservations.swift in Sources */,
+				844BF266292D4734005710AB /* ParkingSpots.swift in Sources */,
+				844BF26A292D47B0005710AB /* Car.swift in Sources */,
 				844BF251292D35ED005710AB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		844BF254292D35ED005710AB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				844BF255292D35ED005710AB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		844BF259292D35EF005710AB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				844BF25A292D35EF005710AB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		844BF25D292D35EF005710AB /* Debug */ = {
@@ -282,6 +347,7 @@
 		};
 		844BF260292D35EF005710AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 275655D431868E163DE171D2 /* Pods-BookingAParkingSpace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,10 +356,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookingAParkingSpace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,14 +367,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lexarelina.BookingAParkingSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		844BF261292D35EF005710AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B47618772E4F4D3219290DD /* Pods-BookingAParkingSpace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -317,10 +387,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookingAParkingSpace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,9 +398,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lexarelina.BookingAParkingSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
