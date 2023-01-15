@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import LordOfNetwork
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let loof = LOF.init()
         view.backgroundColor = .black
     }
 
