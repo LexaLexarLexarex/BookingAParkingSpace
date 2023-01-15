@@ -17,5 +17,3 @@ class ViewController: UIViewController {
 
 
 }
-
-hdrarghyerh
