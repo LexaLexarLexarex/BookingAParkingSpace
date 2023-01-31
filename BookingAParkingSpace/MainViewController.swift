@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  BookingAParkingSpace
 //
-//  Created by lexar on 22.11.2022.
+//  Created by Элина Карапетян on 17.01.2023.
 //
 
 import UIKit
@@ -10,24 +10,35 @@ import SnapKit
 import LordOfNetwork
 
 class ViewController: UIViewController {
+    
+    private let presenter: IMainPresenter
 
     private lazy var enterButton = UIButton()
     private lazy var label1 = UILabel()
     private lazy var label2 = UILabel()
     private lazy var imageView = UIImageView()
     private lazy var image = UIImage(named: "Logo")
-    private lazy var login = UITextField()
-    private lazy var password = UITextField()
-    private var constraint: Constraint?
+    private lazy var login = TextField()
+    private lazy var password = TextField()
     
     private lazy var labelsStackView = UIStackView(arrangedSubviews: [label1, label2])
     private lazy var rootStackView = UIStackView(arrangedSubviews: [imageView, labelsStackView, signUpStackView])
     private lazy var signUpStackView = UIStackView(arrangedSubviews: [login, password, enterButton])
+        
+    init(presenter: IMainPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
     }
+    
     
     private func setUpRootStackView(){
         rootStackView.axis = .vertical
@@ -36,28 +47,16 @@ class ViewController: UIViewController {
         rootStackView.setCustomSpacing(64, after: labelsStackView)
         view.addSubview(rootStackView)
         rootStackView.snp.makeConstraints {
-            constraint = $0.centerY.equalToSuperview().constraint
             $0.left.right.equalToSuperview().inset(20)
+            $0.center.equalToSuperview()
         }
     }
     
     private func setUpSignUpStackView() {
-        login.backgroundColor = UIColor(hex: 0xF6F7F8)
-        login.layer.cornerRadius = 12
-        login.placeholder = "Имя пользователя"
-        login.layer.masksToBounds = true
-        login.clearButtonMode = .whileEditing
-        login.snp.makeConstraints{
-            $0.height.equalTo(56)
-        }
-        password.backgroundColor = UIColor(hex: 0xF6F7F8)
-        password.layer.cornerRadius = 12
-        password.placeholder = "Пароль"
-        login.layer.masksToBounds = true
-        password.clearButtonMode = .whileEditing
-        password.snp.makeConstraints{
-            $0.height.equalTo(56)
-        }
+        login.initAuthTextField(placeholder: "Имя пользователя")
+                
+        password.initAuthTextField(placeholder: "Пароль")
+        
         signUpStackView.axis = .vertical
         signUpStackView.spacing = 20
         signUpStackView.setCustomSpacing(16, after: login)
@@ -85,19 +84,9 @@ class ViewController: UIViewController {
     }
     
     private func setUpLabelsStackView(){
-        label1.text = "Parking Spots"
-        label1.font = UIFont.systemFont(ofSize: 28)
-        label1.textAlignment = .center
-        label1.snp.makeConstraints{
-            $0.width.equalTo(350)
-        }
+        label1.initLabel(text: "Parking Spots", fontSize: 28)
 
-        label2.text = "Бронирование парковочных мест"
-        label2.font = UIFont.systemFont(ofSize: 16)
-        label2.textAlignment = .center
-        label2.snp.makeConstraints{
-            $0.width.equalTo(350)
-        }
+        label2.initLabel(text: "Бронирование парковочных мест", fontSize: 16)
         
         labelsStackView.axis = .vertical
         labelsStackView.setCustomSpacing(8, after: label1)
@@ -122,7 +111,46 @@ class ViewController: UIViewController {
         setUpSignUpStackView()
 
         setUpImage()
+        
+        setupKeyboardHiding()
+    }
+    
+    private func setupKeyboardHiding(){
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+        
+    @objc private func hideKeyboard(){
+        self.view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification){
+        guard let userInfo = notification.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
+              let currentTextField = UIResponder.currentFirst() as? UITextField else { return }
+        
+        let keyboardTopY = keyboardFrame.cgRectValue.origin.y
+        let convertedTextFieldFrame = view.convert(signUpStackView.frame, from: signUpStackView.superview)
+        let textFieldBottomY = convertedTextFieldFrame.origin.y + convertedTextFieldFrame.size.height
+        
+        if textFieldBottomY > keyboardTopY {
+            let textBoxY = convertedTextFieldFrame.origin.y
+            let newFrameY = (textBoxY - keyboardTopY / 2) * -1
+            view.frame.origin.y = newFrameY
+        }
+    }
+    
+    @objc private func keyboardWillHide(){
+        view.frame.origin.y = 0
+        
+    }
+    
+    @objc private func didTapMinusButton() {
+        presenter.didTapEnterButton()
     }
 
-
 }
+
+
