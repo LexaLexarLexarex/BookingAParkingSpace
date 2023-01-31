@@ -9,7 +9,11 @@ import UIKit
 import SnapKit
 import LordOfNetwork
 
-class ViewController: UIViewController {
+protocol IMainView: AnyObject {
+    func updateUsersInfo(with value: String)
+}
+
+class MainViewController: UIViewController, IMainView {
     
     private let presenter: IMainPresenter
 
@@ -81,6 +85,8 @@ class ViewController: UIViewController {
             $0.height.equalTo(56)
             $0.width.equalTo(350)
         }
+        
+        enterButton.addTarget(self, action: #selector(didTapEnterButton), for: .touchUpInside)
     }
     
     private func setUpLabelsStackView(){
@@ -147,8 +153,11 @@ class ViewController: UIViewController {
         
     }
     
-    @objc private func didTapMinusButton() {
-        presenter.didTapEnterButton()
+    @objc private func didTapEnterButton() {
+        presenter.didTapEnter(login: login.text!, password: password.text!)
+    }
+    
+    func updateUsersInfo(with value: String) {
     }
 
 }
