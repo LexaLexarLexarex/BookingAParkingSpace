@@ -6,10 +6,11 @@
 import Foundation
 
 // MARK: - Car
-struct Car: Codable {
+
+public struct Car: Codable {
     let id, model: String
     let length, wight: Int
     let registryNumber: String
 }
 
-typealias Cars = [Car]
+public typealias Cars = [Car]

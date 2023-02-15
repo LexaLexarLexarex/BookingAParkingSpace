@@ -6,10 +6,11 @@
 import Foundation
 
 // MARK: - ParkingSpots
-struct ParkingSpot: Codable {
+
+public struct ParkingSpot: Codable {
     let id: String
     let parkingNumber: Int
     let isFree: Bool
 }
 
-typealias ParkingSpots = [ParkingSpot]
+public typealias ParkingSpots = [ParkingSpot]
