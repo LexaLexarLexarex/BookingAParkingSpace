@@ -6,12 +6,12 @@
 //
 import UIKit
 
-extension UILabel{
-    func initLabel(text: String, fontSize: CGFloat){
+extension UILabel {
+    func initLabel(text: String, fontSize: CGFloat) {
         self.text = text
-        self.font = UIFont.systemFont(ofSize: fontSize)
-        self.textAlignment = .center
-        self.snp.makeConstraints{
+        font = UIFont.systemFont(ofSize: fontSize)
+        textAlignment = .center
+        snp.makeConstraints {
             $0.width.equalTo(350)
         }
     }

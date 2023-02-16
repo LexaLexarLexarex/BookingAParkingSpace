@@ -4,12 +4,11 @@
 //
 //  Created by Элина Карапетян on 31.01.2023.
 //
-import UIKit
 import Foundation
+import UIKit
 extension UIResponder {
-
-    private struct Static {
-        static weak var responder: UIResponder?
+    private enum Static {
+        weak static var responder: UIResponder?
     }
 
     /// Finds the current first responder

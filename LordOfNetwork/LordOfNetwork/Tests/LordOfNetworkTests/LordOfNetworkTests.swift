@@ -1,11 +1,10 @@
-import XCTest
 @testable import LordOfNetwork
+import XCTest
 
 final class LordOfNetworkTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(LordOfNetwork().text, "Hello, World!")
+    let LON = LordOfNetwork(authService: Auth())
+
+    func testText() throws {
+        XCTAssertEqual(LON.domen, "http://localhost:8080")
     }
 }

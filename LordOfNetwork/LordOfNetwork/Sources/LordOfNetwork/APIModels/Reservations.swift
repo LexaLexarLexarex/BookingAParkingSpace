@@ -6,11 +6,12 @@
 import Foundation
 
 // MARK: - Reservations
-struct Reservation: Codable {
+
+public struct Reservation: Codable {
     let id, carID, employeeID, parkingSpotID: String
     let startTime, endTime: String
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case id
         case carID = "carId"
         case employeeID = "employeeId"

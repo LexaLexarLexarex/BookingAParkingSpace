@@ -22,13 +22,13 @@ class TextField: UITextField {
 }
 
 extension TextField {
-    func initAuthTextField(placeholder : String){
-        self.backgroundColor = UIColor(hex: 0xF6F7F8)
-        self.layer.cornerRadius = 12
+    func initAuthTextField(placeholder: String) {
+        backgroundColor = UIColor(hex: 0xF6F7F8)
+        layer.cornerRadius = 12
         self.placeholder = placeholder
-        self.layer.masksToBounds = true
-        self.clearButtonMode = .whileEditing
-        self.snp.makeConstraints{
+        layer.masksToBounds = true
+        clearButtonMode = .whileEditing
+        snp.makeConstraints {
             $0.height.equalTo(56)
         }
     }
