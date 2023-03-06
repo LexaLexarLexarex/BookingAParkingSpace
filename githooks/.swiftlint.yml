@@ -1,0 +1,98 @@
+warning_threshold: 1
+
+included:
+  - ../Development
+  - ./
+
+disabled_rules:
+  # Допускаем TODO и FIXME в коде. Формат TODO и FIXME задан в custom_rules
+  - todo
+  # Запятой после последнего элемента в массиве управляет SwiftFormat
+  - trailing_comma
+  # Ограничения на имя generic
+  - generic_type_name
+  # FIXME: Порядок set и get в свойствах. Включил бы если бы был autocorrection.
+  # Found 32 violations
+  - computed_accessors_order
+
+opt_in_rules:
+  # Некоторые переопределяемые методы всегда должны вызывать super
+  - overridden_super_call
+  # Некоторые методы не должны вызывать super
+  - prohibited_super_call
+  # Избегаем непосредственного вызова .init()
+  - explicit_init
+  # Операторы должны быть окружены одиночным пробелом
+  - operator_usage_whitespace
+  # FIXME: Следует избегать Implicitly unwrapped optionals когда это возможно.
+  # Found 35 violations
+  #- implicitly_unwrapped_optional
+  # Переменные не должны иметь избыточного указания типа
+  - redundant_type_annotation
+  # Конструкция `?? nil` избыточна
+  - redundant_nil_coalescing
+  # Операторы должны быть объявлены как статические функции,
+  # а не как свободные функции.
+  - static_operator
+  # Использование someBool.toggle() предпочтительнее someBool = !someBool.
+  - toggle_bool
+  # Нереализованные функции должны быть помечены как @unavailable.
+  - unavailable_function
+  # Все импортированные модули должны быть обязательными для компиляции файла.
+  - unused_import
+  # Предпочитайте .zero явной инициализации с нулевыми параметрами
+  # (например, CGPoint(x: 0, y: 0))
+  - prefer_zero_over_explicit_init
+  # Предпочитайте Self.type(of:self) при доступе к свойствам или вызове методов.
+  - prefer_self_type_over_type_of_self
+  # Статические ссылки должны иметь префикс Self вместо имени класса.
+  - prefer_self_in_static_references
+  # Не рекомендуется явное использование разделителя по умолчанию.
+  - joined_default_parameter
+  # Сравнение двух одинаковых идентификаторов скорее всего ошибка
+  - identical_operands
+  # Если можно не писать returns в closures, functions и getters, то не пишем.
+  - implicit_return
+
+large_tuple: 4
+
+line_length: 150
+
+function_parameter_count:
+  warning: 10
+  error: 15
+
+# Функция не должна быть слишком длинной
+# FIXME: исправить 2 метода и можно снизить до 100
+function_body_length:
+  warning: 185
+  error: 185
+
+# Сложность тела функции должна быть ограничена
+# FIXME: исправить 2 метода и можно снизить до 18
+cyclomatic_complexity:
+  warning: 21
+  error: 21
+  ignores_case_statements: false
+
+file_length:
+  warning: 500
+
+type_body_length:
+  warning: 400
+  error: 450
+
+nesting:
+  type_level:
+    warning: 3
+  statement_level:
+    warning: 5
+
+identifier_name:
+  min_length: 1
+  max_length: 65
+
+type_name:
+  min_length: 3
+  max_length: 65
+  
