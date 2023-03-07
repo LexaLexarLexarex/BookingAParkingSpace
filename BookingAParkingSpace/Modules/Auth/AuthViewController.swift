@@ -164,15 +164,14 @@ private extension AuthViewController {
 
     private func setupLayouts() {
         rootStackView.snp.makeConstraints {
-            $0.left.right.equalToSuperview().inset(20)
-            $0.center.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.centerY.equalToSuperview()
         }
         signUpStackView.snp.makeConstraints {
             $0.width.equalToSuperview()
         }
         enterButton.snp.makeConstraints {
             $0.height.equalTo(56)
-            $0.width.equalTo(350)
         }
 
         headerView.snp.makeConstraints {
@@ -191,9 +190,8 @@ private extension AuthViewController {
 
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let userInfo = notification.userInfo,
-              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
-              let _ = UIResponder.currentFirst() as? UITextField else { return }
-
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        else { return }
         let keyboardTopY = keyboardFrame.cgRectValue.origin.y
         let convertedTextFieldFrame = view.convert(signUpStackView.frame, from: signUpStackView.superview)
         let textFieldBottomY = convertedTextFieldFrame.origin.y + convertedTextFieldFrame.size.height

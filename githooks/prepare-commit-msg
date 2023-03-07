@@ -1,0 +1,73 @@
+#!/usr/bin/swift
+
+import Foundation
+
+let ticketPattern = "(task)\\d+"
+
+func shell(launchPath: String, arguments: [String]) -> String {
+    let task = Process()
+    task.launchPath = launchPath
+    task.arguments = arguments
+    
+    let pipe = Pipe()
+    task.standardOutput = pipe
+    task.launch()
+    
+    let data = pipe.fileHandleForReading.readDataToEndOfFile()
+    let output = String(data: data, encoding: String.Encoding.utf8)!
+    if output.count > 0 {
+        // remove newline character.
+        let count = output.count-1
+        return String(output.prefix(count))
+    }
+    return output
+}
+
+func bash(_ command: String, _ arguments: String...) -> String {
+    let whichPathForCommand = shell(launchPath: "/bin/bash", arguments: [ "-l", "-c", "which \(command)" ])
+    return shell(launchPath: whichPathForCommand, arguments: arguments)
+}
+
+func extractTicket(branch: String, ticketPattern: String) throws -> String? {
+    let regex = try NSRegularExpression(pattern: ticketPattern)
+    let results = regex.matches(
+        in: branch,
+        range: NSRange(branch.startIndex..., in: branch)
+    )
+    let stringResults = results.map {
+        String(branch[Range($0.range, in: branch)!])
+    }
+    return stringResults.first
+}
+
+func log(_ message: String) {
+    print("[prepare-commit-msg]: \(message)")
+}
+
+func main() throws {
+    let branch = bash("git", "symbolic-ref", "--short", "HEAD")
+    let commitMessageFile = CommandLine.arguments[1]
+
+    guard let ticket = try extractTicket(branch: branch, ticketPattern: ticketPattern) else {
+        log("Ticket can not be extracted form branch: \(branch)")
+        return
+    }
+    
+    let commitMessage = try String(contentsOfFile: commitMessageFile, encoding: .utf8)
+
+    guard !commitMessage.hasPrefix(ticket) else { 
+        log("Skip editing commit message, it already has ticket prefix")
+        return 
+    }
+    let editedCommitMessage = "\(ticket) - \(commitMessage)"
+    try editedCommitMessage.write(toFile: commitMessageFile, atomically: false, encoding: .utf8)
+    
+    log("Attached ticket prefix: \(ticket)")
+}
+
+do {
+    try main()
+} catch let error {
+    log(error.localizedDescription)
+    fatalError()
+}

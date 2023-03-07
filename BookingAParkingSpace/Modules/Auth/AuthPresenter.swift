@@ -14,11 +14,13 @@ protocol IAuthPresenter {
 
 final class AuthPresenter: IAuthPresenter {
     let authService: IAuthTool & AuthToKeyChain
+    private let router: IAuthRouter
     weak var view: IAuthView?
 
-    init(authService: IAuthTool & AuthToKeyChain, view: IAuthView? = nil) {
+    init(authService: IAuthTool & AuthToKeyChain, view: IAuthView? = nil, router: IAuthRouter) {
         self.authService = authService
         self.view = view
+        self.router = router
     }
 
     func didTapEnter(login: String, password: String) {
@@ -29,7 +31,7 @@ final class AuthPresenter: IAuthPresenter {
                 switch result {
                 case let .success(success):
                     self.authService.setAuth(model: a)
-                    self.view?.updateUsersInfo(with: success)
+                    self.router.openSecondaryScreen()
                 case .failure:
                     self.authService.removeAuth()
                     self.view?.showError("Ничего не работает")

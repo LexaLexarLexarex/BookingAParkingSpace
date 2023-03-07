@@ -1,0 +1,50 @@
+#!/bin/bash
+
+PROJECT_ROOT=$(git rev-parse --show-toplevel)
+
+##### Run swiftformat and add files to index
+
+git diff --diff-filter=d --staged --name-only | grep -e '\(.*\).swift$' | while read line; do
+  swiftformat "${line}" --config "${PROJECT_ROOT}/githooks/.swiftformat"
+  git add "$line"
+done
+
+##### run swiftlint and add files to index if possible
+
+count=0
+for file_path in $(git ls-files -m --exclude-from=.gitignore | grep ".swift$"); do
+  export SCRIPT_INPUT_FILE_$count=$file_path
+  count=$((count + 1))
+done
+
+##### Check for modified files in unstaged/Staged area #####
+for file_path in $(git diff --name-status --diff-filter=AM --cached | grep ".swift$"); do
+  export SCRIPT_INPUT_FILE_$count=$file_path
+  count=$((count + 1))
+done
+
+##### Make the count avilable as global variable #####
+export SCRIPT_INPUT_FILE_COUNT=$count
+
+##### Lint files or exit if no files found for linting #####
+if [ "$count" -ne 0 ]; then
+  echo "Found ${count} lintable files. Linting and fixing the fixible parts..."
+  # autocorrects before commit.
+  swiftlint --fix --use-script-input-files --config "${PROJECT_ROOT}/githooks/.swiftlint.yml"
+  # fails if some manual changes required
+  swiftlint --use-script-input-files --config "${PROJECT_ROOT}/githooks/.swiftlint.yml"
+else
+  echo "No files to lint!"
+  exit 0
+fi
+
+RESULT=$?
+
+if [ $RESULT -eq 0 ]; then
+  echo ""
+  echo "Good job, you are all set!"
+else
+  echo ""
+  echo "Please fix ERRORs before committing!"
+fi
+exit $RESULT
