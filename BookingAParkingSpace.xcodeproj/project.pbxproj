@@ -21,6 +21,13 @@
 		3D1A90B82976AA4700E5C988 /* TextField+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A90B72976AA4700E5C988 /* TextField+extension.swift */; };
 		3D1A90BC2976B22B00E5C988 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A90BB2976B22B00E5C988 /* AuthViewController.swift */; };
 		3D1A90C12976BC1D00E5C988 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A90C02976BC1D00E5C988 /* UILabelExtension.swift */; };
+		3D2095B329E828F7000429E2 /* TimeSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2095B229E828F7000429E2 /* TimeSelectionPresenter.swift */; };
+		3DAC54FE29DDA09F0004BADD /* DateSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC54FD29DDA09F0004BADD /* DateSelectionViewController.swift */; };
+		3DAC550129DDA31D0004BADD /* TimeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC550029DDA31D0004BADD /* TimeSelectionViewController.swift */; };
+		3DAC550329DDA9730004BADD /* DateSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC550229DDA9730004BADD /* DateSelectionPresenter.swift */; };
+		3DAC550529DDAB0E0004BADD /* RealBookingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC550429DDAB0E0004BADD /* RealBookingAssembly.swift */; };
+		3DC2702B29D5C9F100DBB4D5 /* RealBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2702A29D5C9F100DBB4D5 /* RealBookingViewController.swift */; };
+		3DC2702D29D5CA7200DBB4D5 /* RealBookingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2702C29D5CA7200DBB4D5 /* RealBookingPresenter.swift */; };
 		3DC57BA429889F61009EBD1E /* UIResponder+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC57BA329889F61009EBD1E /* UIResponder+Utils.swift */; };
 		3DC57BA62989541D009EBD1E /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC57BA52989541D009EBD1E /* AuthPresenter.swift */; };
 		3DC57BA829896289009EBD1E /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC57BA729896289009EBD1E /* AuthAssembly.swift */; };
@@ -45,6 +52,13 @@
 		3D1A90B72976AA4700E5C988 /* TextField+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+extension.swift"; sourceTree = "<group>"; };
 		3D1A90BB2976B22B00E5C988 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		3D1A90C02976BC1D00E5C988 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		3D2095B229E828F7000429E2 /* TimeSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectionPresenter.swift; sourceTree = "<group>"; };
+		3DAC54FD29DDA09F0004BADD /* DateSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionViewController.swift; sourceTree = "<group>"; };
+		3DAC550029DDA31D0004BADD /* TimeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectionViewController.swift; sourceTree = "<group>"; };
+		3DAC550229DDA9730004BADD /* DateSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionPresenter.swift; sourceTree = "<group>"; };
+		3DAC550429DDAB0E0004BADD /* RealBookingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealBookingAssembly.swift; sourceTree = "<group>"; };
+		3DC2702A29D5C9F100DBB4D5 /* RealBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealBookingViewController.swift; sourceTree = "<group>"; };
+		3DC2702C29D5CA7200DBB4D5 /* RealBookingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealBookingPresenter.swift; sourceTree = "<group>"; };
 		3DC57BA329889F61009EBD1E /* UIResponder+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Utils.swift"; sourceTree = "<group>"; };
 		3DC57BA52989541D009EBD1E /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		3DC57BA729896289009EBD1E /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
@@ -93,6 +107,9 @@
 		32674E61299D55DB00660344 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3DAC54FF29DDA2FA0004BADD /* TimeSelectionModule */,
+				3DAC54FC29DDA0570004BADD /* DateSelectionModule */,
+				3DC2702929D5C87F00DBB4D5 /* RealBookingModule */,
 				32355EBF29A56398002EC04D /* BookingModule */,
 				32355EB829A56130002EC04D /* MapModule */,
 				32674E62299D55EF00660344 /* Auth */,
@@ -129,6 +146,34 @@
 				32355EB629A5609D002EC04D /* UIViewController+Child.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3DAC54FC29DDA0570004BADD /* DateSelectionModule */ = {
+			isa = PBXGroup;
+			children = (
+				3DAC54FD29DDA09F0004BADD /* DateSelectionViewController.swift */,
+				3DAC550229DDA9730004BADD /* DateSelectionPresenter.swift */,
+			);
+			path = DateSelectionModule;
+			sourceTree = "<group>";
+		};
+		3DAC54FF29DDA2FA0004BADD /* TimeSelectionModule */ = {
+			isa = PBXGroup;
+			children = (
+				3DAC550029DDA31D0004BADD /* TimeSelectionViewController.swift */,
+				3D2095B229E828F7000429E2 /* TimeSelectionPresenter.swift */,
+			);
+			path = TimeSelectionModule;
+			sourceTree = "<group>";
+		};
+		3DC2702929D5C87F00DBB4D5 /* RealBookingModule */ = {
+			isa = PBXGroup;
+			children = (
+				3DC2702A29D5C9F100DBB4D5 /* RealBookingViewController.swift */,
+				3DC2702C29D5CA7200DBB4D5 /* RealBookingPresenter.swift */,
+				3DAC550429DDAB0E0004BADD /* RealBookingAssembly.swift */,
+			);
+			path = RealBookingModule;
 			sourceTree = "<group>";
 		};
 		844BF242292D35ED005710AB = {
@@ -257,14 +302,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1A90BC2976B22B00E5C988 /* AuthViewController.swift in Sources */,
+				3DAC550529DDAB0E0004BADD /* RealBookingAssembly.swift in Sources */,
 				3D1A90B429768FCA00E5C988 /* UIColor+Hex.swift in Sources */,
+				3D2095B329E828F7000429E2 /* TimeSelectionPresenter.swift in Sources */,
 				32355EC329A563F2002EC04D /* BookingPresenter.swift in Sources */,
 				32355EBE29A561FE002EC04D /* MapAssembly.swift in Sources */,
 				32355EBC29A561F0002EC04D /* MapPresenter.swift in Sources */,
+				3DC2702B29D5C9F100DBB4D5 /* RealBookingViewController.swift in Sources */,
 				3DC57BA829896289009EBD1E /* AuthAssembly.swift in Sources */,
 				32355EC529A5640B002EC04D /* BookingAssembly.swift in Sources */,
 				3D1A90B82976AA4700E5C988 /* TextField+extension.swift in Sources */,
+				3DAC54FE29DDA09F0004BADD /* DateSelectionViewController.swift in Sources */,
 				844BF24F292D35ED005710AB /* AppDelegate.swift in Sources */,
+				3DC2702D29D5CA7200DBB4D5 /* RealBookingPresenter.swift in Sources */,
 				3DC57BA62989541D009EBD1E /* AuthPresenter.swift in Sources */,
 				3DC57BA429889F61009EBD1E /* UIResponder+Utils.swift in Sources */,
 				32355EBA29A561DE002EC04D /* MapViewController.swift in Sources */,
@@ -273,6 +323,8 @@
 				3D1A90C12976BC1D00E5C988 /* UILabelExtension.swift in Sources */,
 				32355EC129A563E4002EC04D /* BookingViewController.swift in Sources */,
 				32A1A14629B685000056C523 /* AuthRouter.swift in Sources */,
+				3DAC550129DDA31D0004BADD /* TimeSelectionViewController.swift in Sources */,
+				3DAC550329DDA9730004BADD /* DateSelectionPresenter.swift in Sources */,
 				844BF251292D35ED005710AB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

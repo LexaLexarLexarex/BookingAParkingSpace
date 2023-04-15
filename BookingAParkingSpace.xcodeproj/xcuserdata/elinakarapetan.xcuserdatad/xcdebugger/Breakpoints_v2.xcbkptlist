@@ -21,7 +21,7 @@
             <Locations>
                <Location
                   uuid = "3279A791-F9D2-48F4-81FE-D9998D2BBC89 - 37023e2304353bdb"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "BookingAParkingSpace.ViewController.keyboardWillShow(notification: __C.NSNotification) -&gt; ()"
@@ -36,7 +36,7 @@
                </Location>
                <Location
                   uuid = "3279A791-F9D2-48F4-81FE-D9998D2BBC89 - 37023e2304353bdb"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "BookingAParkingSpace.ViewController.keyboardWillShow(notification: __C.NSNotification) -&gt; ()"
@@ -114,6 +114,86 @@
             endingLineNumber = "139"
             landmarkName = "keyboardWillShow(notification:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9B78A1E9-B6FA-4972-9E12-9B9409A0450A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookingAParkingSpace/Modules/DateSelectionModule/DateSelectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "isSelected"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5B1F6A5-4D76-4168-840C-3AE67F6188B0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookingAParkingSpace/Modules/DateSelectionModule/DateSelectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "isSelected"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78489EFE-AB53-4E8C-ACE1-575AE8821B03"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookingAParkingSpace/Modules/RealBookingModule/RealBookingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "addDateSelectionView(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "78489EFE-AB53-4E8C-ACE1-575AE8821B03 - 2d9fcb8e2688adc0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BookingAParkingSpace.RealBookingViewController.addDateSelectionView(__C.UIViewController) -&gt; ()"
+                  moduleName = "BookingAParkingSpace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elinakarapetan/Developer/BookingAParkingSpace/BookingAParkingSpace/Modules/RealBookingModule/RealBookingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "78489EFE-AB53-4E8C-ACE1-575AE8821B03 - 44bdec7c3da0047c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SnapKit.ConstraintMaker) -&gt; () in BookingAParkingSpace.RealBookingViewController.addDateSelectionView(__C.UIViewController) -&gt; ()"
+                  moduleName = "BookingAParkingSpace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elinakarapetan/Developer/BookingAParkingSpace/BookingAParkingSpace/Modules/RealBookingModule/RealBookingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

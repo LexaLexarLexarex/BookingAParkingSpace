@@ -16,11 +16,15 @@ final class BookingAssembly {
 
         let mapPresenter = MapPresenter(daddyPresenter: presenter)
         let mapView = MapViewController(presenter: mapPresenter)
-
+        
         mapPresenter.view = mapView
-
+        
         view.addMapView(mapView)
 
+        let viewController = RealBookingAssembly().assemble(daddyPresenter: presenter)
+        
+        view.addBookingView(viewController)
+        
         return view
     }
 }

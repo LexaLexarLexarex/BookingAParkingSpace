@@ -10,4 +10,5 @@ protocol IBookingPresenter {}
 final class BookingPresenter: IBookingPresenter {
     weak var view: IBookingView?
     weak var childPresenter: IMapPresenter?
+    weak var childPresenter2: IRealBookingPresenter?
 }

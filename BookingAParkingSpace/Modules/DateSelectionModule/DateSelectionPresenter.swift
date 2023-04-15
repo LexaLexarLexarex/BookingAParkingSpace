@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+protocol IDateSelectionPresenter: AnyObject {}
+
+final class DateSelectionPresenter: IDateSelectionPresenter {
+    weak var view: IDateSelectionView?
+    let daddyPresenter: IRealBookingPresenter
+
+    init(view: IDateSelectionView? = nil, daddyPresenter: IRealBookingPresenter) {
+        self.view = view
+        self.daddyPresenter = daddyPresenter
+    }
+}
