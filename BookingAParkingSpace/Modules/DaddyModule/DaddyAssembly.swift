@@ -16,15 +16,15 @@ final class DaddyAssembly {
 
         let mapPresenter = MapPresenter(daddyPresenter: presenter)
         let mapView = MapViewController(presenter: mapPresenter)
-        
+
         mapPresenter.view = mapView
-        
+
         view.addMapView(mapView)
 
         let viewController = BookingAssembly().assemble(daddyPresenter: presenter)
-        
+
         view.addBookingView(viewController)
-        
+
         return view
     }
 }
