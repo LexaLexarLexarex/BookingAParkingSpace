@@ -15,11 +15,11 @@ protocol IMapPresenter: AnyObject {
 
 final class MapPresenter: IMapPresenter {
     weak var view: IMapView?
-    private let daddyPresenter: IBookingPresenter
+    let daddyPresenter: IDaddyPresenter
     private var map: BookingMap?
     private var currentLevel: Level?
 
-    init(view: IMapView? = nil, daddyPresenter: IBookingPresenter) {
+    init(view: IMapView? = nil, daddyPresenter: IDaddyPresenter) {
         self.view = view
         self.daddyPresenter = daddyPresenter
     }
