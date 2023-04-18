@@ -7,15 +7,15 @@
 
 import Foundation
 
-protocol IRealBookingPresenter: AnyObject {}
+protocol IBookingPresenter: AnyObject {}
 
-final class RealBookingPresenter: IRealBookingPresenter {
+final class BookingPresenter: IBookingPresenter {
     weak var view: IRealBookingView?
-    let daddyPresenter: IBookingPresenter
+    let daddyPresenter: IDaddyPresenter
     
     weak var childPresenter: IDateSelectionPresenter?
 
-    init(view: IRealBookingView? = nil, daddyPresenter: IBookingPresenter) {
+    init(view: IRealBookingView? = nil, daddyPresenter: IDaddyPresenter) {
         self.view = view
         self.daddyPresenter = daddyPresenter
     }

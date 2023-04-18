@@ -5,10 +5,10 @@
 //  Created by a.g.dolgopolov on 21.02.2023.
 //
 
-protocol IBookingPresenter {}
+protocol IDaddyPresenter {}
 
-final class BookingPresenter: IBookingPresenter {
+final class DaddyPresenter: IDaddyPresenter {
     weak var view: IBookingView?
     weak var childPresenter: IMapPresenter?
-    weak var childPresenter2: IRealBookingPresenter?
+    weak var childPresenter2: IBookingPresenter?
 }

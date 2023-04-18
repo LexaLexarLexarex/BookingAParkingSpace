@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow()
         window?.windowScene = scene
 
-        let assembly = BookingAssembly()
+        let assembly = AuthAssembly()
 
         window?.rootViewController = assembly.assemble()
         window?.makeKeyAndVisible()

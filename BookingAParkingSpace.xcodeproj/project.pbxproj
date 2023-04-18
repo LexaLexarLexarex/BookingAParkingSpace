@@ -11,9 +11,9 @@
 		32355EBA29A561DE002EC04D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32355EB929A561DE002EC04D /* MapViewController.swift */; };
 		32355EBC29A561F0002EC04D /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32355EBB29A561F0002EC04D /* MapPresenter.swift */; };
 		32355EBE29A561FE002EC04D /* MapAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32355EBD29A561FE002EC04D /* MapAssembly.swift */; };
-		32355EC129A563E4002EC04D /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32355EC029A563E4002EC04D /* BookingViewController.swift */; };
-		32355EC329A563F2002EC04D /* BookingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32355EC229A563F2002EC04D /* BookingPresenter.swift */; };
-		32355EC529A5640B002EC04D /* BookingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32355EC429A5640B002EC04D /* BookingAssembly.swift */; };
+		32355EC129A563E4002EC04D /* DaddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32355EC029A563E4002EC04D /* DaddyViewController.swift */; };
+		32355EC329A563F2002EC04D /* DaddyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32355EC229A563F2002EC04D /* DaddyPresenter.swift */; };
+		32355EC529A5640B002EC04D /* DaddyAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32355EC429A5640B002EC04D /* DaddyAssembly.swift */; };
 		32A1A14629B685000056C523 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A1A14529B685000056C523 /* AuthRouter.swift */; };
 		3D1A90B129768F8200E5C988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BF25A292D35EF005710AB /* LaunchScreen.storyboard */; };
 		3D1A90B429768FCA00E5C988 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A90B329768FCA00E5C988 /* UIColor+Hex.swift */; };
@@ -25,9 +25,9 @@
 		3DAC54FE29DDA09F0004BADD /* DateSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC54FD29DDA09F0004BADD /* DateSelectionViewController.swift */; };
 		3DAC550129DDA31D0004BADD /* TimeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC550029DDA31D0004BADD /* TimeSelectionViewController.swift */; };
 		3DAC550329DDA9730004BADD /* DateSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC550229DDA9730004BADD /* DateSelectionPresenter.swift */; };
-		3DAC550529DDAB0E0004BADD /* RealBookingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC550429DDAB0E0004BADD /* RealBookingAssembly.swift */; };
-		3DC2702B29D5C9F100DBB4D5 /* RealBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2702A29D5C9F100DBB4D5 /* RealBookingViewController.swift */; };
-		3DC2702D29D5CA7200DBB4D5 /* RealBookingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2702C29D5CA7200DBB4D5 /* RealBookingPresenter.swift */; };
+		3DAC550529DDAB0E0004BADD /* BookingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC550429DDAB0E0004BADD /* BookingAssembly.swift */; };
+		3DC2702B29D5C9F100DBB4D5 /* BookingModuleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2702A29D5C9F100DBB4D5 /* BookingModuleController.swift */; };
+		3DC2702D29D5CA7200DBB4D5 /* BookingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2702C29D5CA7200DBB4D5 /* BookingPresenter.swift */; };
 		3DC57BA429889F61009EBD1E /* UIResponder+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC57BA329889F61009EBD1E /* UIResponder+Utils.swift */; };
 		3DC57BA62989541D009EBD1E /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC57BA52989541D009EBD1E /* AuthPresenter.swift */; };
 		3DC57BA829896289009EBD1E /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC57BA729896289009EBD1E /* AuthAssembly.swift */; };
@@ -43,9 +43,9 @@
 		32355EB929A561DE002EC04D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		32355EBB29A561F0002EC04D /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		32355EBD29A561FE002EC04D /* MapAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAssembly.swift; sourceTree = "<group>"; };
-		32355EC029A563E4002EC04D /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
-		32355EC229A563F2002EC04D /* BookingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingPresenter.swift; sourceTree = "<group>"; };
-		32355EC429A5640B002EC04D /* BookingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAssembly.swift; sourceTree = "<group>"; };
+		32355EC029A563E4002EC04D /* DaddyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaddyViewController.swift; sourceTree = "<group>"; };
+		32355EC229A563F2002EC04D /* DaddyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaddyPresenter.swift; sourceTree = "<group>"; };
+		32355EC429A5640B002EC04D /* DaddyAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaddyAssembly.swift; sourceTree = "<group>"; };
 		32A1A14529B685000056C523 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		3D1A90B329768FCA00E5C988 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		3D1A90B52976901800E5C988 /* UIImage+fromColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+fromColor.swift"; sourceTree = "<group>"; };
@@ -56,9 +56,9 @@
 		3DAC54FD29DDA09F0004BADD /* DateSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionViewController.swift; sourceTree = "<group>"; };
 		3DAC550029DDA31D0004BADD /* TimeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectionViewController.swift; sourceTree = "<group>"; };
 		3DAC550229DDA9730004BADD /* DateSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionPresenter.swift; sourceTree = "<group>"; };
-		3DAC550429DDAB0E0004BADD /* RealBookingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealBookingAssembly.swift; sourceTree = "<group>"; };
-		3DC2702A29D5C9F100DBB4D5 /* RealBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealBookingViewController.swift; sourceTree = "<group>"; };
-		3DC2702C29D5CA7200DBB4D5 /* RealBookingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealBookingPresenter.swift; sourceTree = "<group>"; };
+		3DAC550429DDAB0E0004BADD /* BookingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAssembly.swift; sourceTree = "<group>"; };
+		3DC2702A29D5C9F100DBB4D5 /* BookingModuleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModuleController.swift; sourceTree = "<group>"; };
+		3DC2702C29D5CA7200DBB4D5 /* BookingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingPresenter.swift; sourceTree = "<group>"; };
 		3DC57BA329889F61009EBD1E /* UIResponder+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Utils.swift"; sourceTree = "<group>"; };
 		3DC57BA52989541D009EBD1E /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		3DC57BA729896289009EBD1E /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
@@ -94,14 +94,14 @@
 			path = MapModule;
 			sourceTree = "<group>";
 		};
-		32355EBF29A56398002EC04D /* BookingModule */ = {
+		32355EBF29A56398002EC04D /* DaddyModule */ = {
 			isa = PBXGroup;
 			children = (
-				32355EC029A563E4002EC04D /* BookingViewController.swift */,
-				32355EC229A563F2002EC04D /* BookingPresenter.swift */,
-				32355EC429A5640B002EC04D /* BookingAssembly.swift */,
+				32355EC029A563E4002EC04D /* DaddyViewController.swift */,
+				32355EC229A563F2002EC04D /* DaddyPresenter.swift */,
+				32355EC429A5640B002EC04D /* DaddyAssembly.swift */,
 			);
-			path = BookingModule;
+			path = DaddyModule;
 			sourceTree = "<group>";
 		};
 		32674E61299D55DB00660344 /* Modules */ = {
@@ -110,7 +110,7 @@
 				3DAC54FF29DDA2FA0004BADD /* TimeSelectionModule */,
 				3DAC54FC29DDA0570004BADD /* DateSelectionModule */,
 				3DC2702929D5C87F00DBB4D5 /* RealBookingModule */,
-				32355EBF29A56398002EC04D /* BookingModule */,
+				32355EBF29A56398002EC04D /* DaddyModule */,
 				32355EB829A56130002EC04D /* MapModule */,
 				32674E62299D55EF00660344 /* Auth */,
 			);
@@ -169,9 +169,9 @@
 		3DC2702929D5C87F00DBB4D5 /* RealBookingModule */ = {
 			isa = PBXGroup;
 			children = (
-				3DC2702A29D5C9F100DBB4D5 /* RealBookingViewController.swift */,
-				3DC2702C29D5CA7200DBB4D5 /* RealBookingPresenter.swift */,
-				3DAC550429DDAB0E0004BADD /* RealBookingAssembly.swift */,
+				3DC2702A29D5C9F100DBB4D5 /* BookingModuleController.swift */,
+				3DC2702C29D5CA7200DBB4D5 /* BookingPresenter.swift */,
+				3DAC550429DDAB0E0004BADD /* BookingAssembly.swift */,
 			);
 			path = RealBookingModule;
 			sourceTree = "<group>";
@@ -302,26 +302,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1A90BC2976B22B00E5C988 /* AuthViewController.swift in Sources */,
-				3DAC550529DDAB0E0004BADD /* RealBookingAssembly.swift in Sources */,
+				3DAC550529DDAB0E0004BADD /* BookingAssembly.swift in Sources */,
 				3D1A90B429768FCA00E5C988 /* UIColor+Hex.swift in Sources */,
 				3D2095B329E828F7000429E2 /* TimeSelectionPresenter.swift in Sources */,
-				32355EC329A563F2002EC04D /* BookingPresenter.swift in Sources */,
+				32355EC329A563F2002EC04D /* DaddyPresenter.swift in Sources */,
 				32355EBE29A561FE002EC04D /* MapAssembly.swift in Sources */,
 				32355EBC29A561F0002EC04D /* MapPresenter.swift in Sources */,
-				3DC2702B29D5C9F100DBB4D5 /* RealBookingViewController.swift in Sources */,
+				3DC2702B29D5C9F100DBB4D5 /* BookingModuleController.swift in Sources */,
 				3DC57BA829896289009EBD1E /* AuthAssembly.swift in Sources */,
-				32355EC529A5640B002EC04D /* BookingAssembly.swift in Sources */,
+				32355EC529A5640B002EC04D /* DaddyAssembly.swift in Sources */,
 				3D1A90B82976AA4700E5C988 /* TextField+extension.swift in Sources */,
 				3DAC54FE29DDA09F0004BADD /* DateSelectionViewController.swift in Sources */,
 				844BF24F292D35ED005710AB /* AppDelegate.swift in Sources */,
-				3DC2702D29D5CA7200DBB4D5 /* RealBookingPresenter.swift in Sources */,
+				3DC2702D29D5CA7200DBB4D5 /* BookingPresenter.swift in Sources */,
 				3DC57BA62989541D009EBD1E /* AuthPresenter.swift in Sources */,
 				3DC57BA429889F61009EBD1E /* UIResponder+Utils.swift in Sources */,
 				32355EBA29A561DE002EC04D /* MapViewController.swift in Sources */,
 				3D1A90B62976901800E5C988 /* UIImage+fromColor.swift in Sources */,
 				32355EB729A5609D002EC04D /* UIViewController+Child.swift in Sources */,
 				3D1A90C12976BC1D00E5C988 /* UILabelExtension.swift in Sources */,
-				32355EC129A563E4002EC04D /* BookingViewController.swift in Sources */,
+				32355EC129A563E4002EC04D /* DaddyViewController.swift in Sources */,
 				32A1A14629B685000056C523 /* AuthRouter.swift in Sources */,
 				3DAC550129DDA31D0004BADD /* TimeSelectionViewController.swift in Sources */,
 				3DAC550329DDA9730004BADD /* DateSelectionPresenter.swift in Sources */,

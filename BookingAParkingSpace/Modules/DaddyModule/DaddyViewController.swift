@@ -14,19 +14,19 @@ protocol IBookingView: AnyObject {
     func addBookingView(_ booking: UIViewController)
 }
 
-final class BookingViewController: UIViewController {
+final class DaddyViewController: UIViewController {
     
     
 //    private lazy var rootStackView = UIStackView(arrangedSubviews: [collectionViewDate, collectionViewTime])
 
-    let presenter: IBookingPresenter
+    let presenter: IDaddyPresenter
 //    let timeExitButton = UIButton(frame: .zero)
     
     var mapView: UIViewController?
     
     var bookingView: UIViewController?
     
-    init(presenter: IBookingPresenter) {
+    init(presenter: IDaddyPresenter) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,13 +37,14 @@ final class BookingViewController: UIViewController {
     }
 }
 
-extension BookingViewController: IBookingView {
+extension DaddyViewController: IBookingView {
     func addBookingView(_ booking: UIViewController) {
         add(booking)
         bookingView = booking
         bookingView?.view.snp.makeConstraints{
             guard let mapView else {return}
-            $0.leading.trailing.top.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalTo(mapView.view.snp.top)
         }
     }
@@ -61,10 +62,11 @@ extension BookingViewController: IBookingView {
 
 // MARK: - Жизненный цикл
 
-extension BookingViewController {
+extension DaddyViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
 
     }
 

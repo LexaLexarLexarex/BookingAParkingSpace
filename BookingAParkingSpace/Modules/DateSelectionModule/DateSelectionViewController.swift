@@ -63,10 +63,9 @@ extension DateSelectionView {
         
         self.view.addSubview(collectionViewDate)
         collectionViewDate.backgroundColor = .white
-        collectionViewDate.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
-        collectionViewDate.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 6).isActive = true
-        collectionViewDate.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -6).isActive = true
-        collectionViewDate.heightAnchor.constraint(equalTo: collectionViewDate.widthAnchor, multiplier: 0.2).isActive = true
+        collectionViewDate.snp.makeConstraints{
+            $0.directionalEdges.equalToSuperview()
+        }
         collectionViewDate.allowsMultipleSelection = false
         collectionViewDate.showsHorizontalScrollIndicator = false
 

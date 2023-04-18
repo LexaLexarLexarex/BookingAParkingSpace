@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class BookingAssembly {
+final class DaddyAssembly {
     func assemble() -> UIViewController {
-        let presenter = BookingPresenter()
-        let view = BookingViewController(presenter: presenter)
+        let presenter = DaddyPresenter()
+        let view = DaddyViewController(presenter: presenter)
 
         presenter.view = view
 
@@ -21,7 +21,7 @@ final class BookingAssembly {
         
         view.addMapView(mapView)
 
-        let viewController = RealBookingAssembly().assemble(daddyPresenter: presenter)
+        let viewController = BookingAssembly().assemble(daddyPresenter: presenter)
         
         view.addBookingView(viewController)
         

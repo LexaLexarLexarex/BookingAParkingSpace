@@ -9,16 +9,16 @@ import Foundation
 
 import UIKit
 
-final class RealBookingAssembly {
-    func assemble(daddyPresenter: IBookingPresenter) -> UIViewController {
-        let presenter = RealBookingPresenter( daddyPresenter: daddyPresenter)
+final class BookingAssembly {
+    func assemble(daddyPresenter: IDaddyPresenter) -> UIViewController {
+        let presenter = BookingPresenter( daddyPresenter: daddyPresenter)
         let dateSelectionPresenter = DateSelectionPresenter(daddyPresenter: presenter)
         let timeSelectionPresenter = TimeSelectionPresenter(daddyPresenter: presenter)
         let dateSelectionView = DateSelectionView(presenter: dateSelectionPresenter)
         let timeSelectionView = TimeSelectionViewController(presenter: timeSelectionPresenter)
-        let view = RealBookingViewController(presenter: presenter, date: dateSelectionView, time: timeSelectionView)
+        let view = BookingModuleController(presenter: presenter, date: dateSelectionView, time: timeSelectionView)
 
-        presenter.view = view
+        presenter.view = view 
 
         dateSelectionPresenter.view = dateSelectionView
         

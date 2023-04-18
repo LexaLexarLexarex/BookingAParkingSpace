@@ -72,10 +72,7 @@ extension TimeSelectionViewController {
         
         view.addSubview(collectionViewTime)
         collectionViewTime.backgroundColor = .white
-        collectionViewTime.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        collectionViewTime.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6).isActive = true
-        collectionViewTime.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6).isActive = true
-        collectionViewTime.heightAnchor.constraint(equalTo: collectionViewTime.widthAnchor, multiplier: 0.2).isActive = true
+        collectionViewTime.snp.makeConstraints{ $0.directionalEdges.equalToSuperview()}
         collectionViewTime.allowsMultipleSelection = false
         collectionViewTime.showsHorizontalScrollIndicator = false
         

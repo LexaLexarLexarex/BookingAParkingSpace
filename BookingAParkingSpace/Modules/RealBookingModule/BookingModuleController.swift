@@ -12,19 +12,17 @@ protocol IRealBookingView: AnyObject {
     func addTimeSelectionView(_ time: UIViewController)
 }
 
-class RealBookingViewController: UIViewController, IRealBookingView {
+class BookingModuleController: UIViewController, IRealBookingView {
     
-    let presenter: IRealBookingPresenter
+    let presenter: IBookingPresenter
     
     var date: UIViewController?
     
     var time: UIViewController?
     
-    let rootStackViewHeight = 400
-    
     private lazy var rootStackView = UIStackView(arrangedSubviews: [date!.view, time!.view])
 
-    init(presenter: IRealBookingPresenter, date: UIViewController, time: UIViewController) {
+    init(presenter: IBookingPresenter, date: UIViewController, time: UIViewController) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
         self.date = date
@@ -40,7 +38,7 @@ class RealBookingViewController: UIViewController, IRealBookingView {
 
 }
 
-extension RealBookingViewController {
+extension BookingModuleController {
     
     
     override func viewDidLoad() {
@@ -51,22 +49,19 @@ extension RealBookingViewController {
     func setUp(){
         view.addSubview(rootStackView)
         rootStackView.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(36)
-            $0.height.equalTo(400)
-            $0.width.equalToSuperview()
+            $0.directionalEdges.equalToSuperview()
         }
         rootStackView.axis = .vertical
     }
     
 }
 
-extension RealBookingViewController{
+extension BookingModuleController{
     func addDateSelectionView(_ date: UIViewController) {
 //        add(date)
         date.view.snp.makeConstraints{
             $0.leading.trailing.top.equalToSuperview()
-            $0.bottom.equalTo(rootStackView.safeAreaLayoutGuide).inset(rootStackViewHeight/4)
+            $0.bottom.equalTo(view.snp.centerY)
 //            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(view.frame.height/2)
         }
     }
@@ -75,7 +70,7 @@ extension RealBookingViewController{
 ////        add(time)
         time.view.snp.makeConstraints{
             $0.leading.trailing.bottom.equalToSuperview()
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(rootStackViewHeight/4)
+            $0.top.equalTo(date!.view.snp.bottom)
 //            make.width.equalTo(390)
 //            make.height.equalTo(80)
 ////            $0.leading.trailing.bottom.equalToSuperview()
