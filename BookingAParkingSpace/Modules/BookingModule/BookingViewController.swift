@@ -10,6 +10,7 @@ import UIKit
 
 protocol IBookingView: AnyObject {
     func addMapView(_ map: UIViewController)
+    func startConfirmation()
 }
 
 final class BookingViewController: UIViewController {
@@ -29,6 +30,12 @@ final class BookingViewController: UIViewController {
 }
 
 extension BookingViewController: IBookingView {
+    func startConfirmation() {
+//        let confirmation = UIViewController()
+//        confirmation.view.backgroundColor = .white
+//        present(confirmation, animated: true)
+    }
+
     func addMapView(_ map: UIViewController) {
         add(map)
         map.view.snp.makeConstraints {
@@ -45,14 +52,22 @@ extension BookingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timeExitButton.backgroundColor = .darkGray
+        timeExitButton.addTarget(self, action: #selector(exit), for: .touchUpInside)
+
+        view.backgroundColor = .blue
+        addViews()
+        setupLayout()
+    }
+
+    func addViews() {
         view.addSubview(timeExitButton)
+    }
+
+    func setupLayout() {
         timeExitButton.snp.makeConstraints {
             $0.size.equalTo(80)
             $0.leading.top.equalTo(100)
         }
-        timeExitButton.addTarget(self, action: #selector(exit), for: .touchUpInside)
-
-        view.backgroundColor = .blue
     }
 
     @objc func exit() {

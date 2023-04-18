@@ -29,7 +29,7 @@ final class AuthPresenter: IAuthPresenter {
             with: a,
             completion: { result in
                 switch result {
-                case let .success(success):
+                case .success:
                     self.authService.setAuth(model: a)
                     self.router.openSecondaryScreen()
                 case .failure:
