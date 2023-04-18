@@ -46,6 +46,7 @@ class TimeSelectionViewController: UIViewController, ITimeSelectionView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
+        cv.contentInset = UIEdgeInsets(top: .zero, left: 15, bottom: .zero, right: 15)
         return cv
     }()
 

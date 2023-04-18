@@ -38,12 +38,19 @@ extension DaddyViewController: IBookingView {
     func addBookingView(_ booking: UIViewController) {
         add(booking)
         bookingView = booking
-        bookingView?.view.snp.makeConstraints {
+        guard let bookingView else { return }
+        bookingView.view.snp.makeConstraints {
             guard let mapView else { return }
             $0.leading.trailing.equalToSuperview()
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(190)
             $0.bottom.equalTo(mapView.view.snp.top)
         }
+        bookingView.view.layer.masksToBounds = false
+        bookingView.view.layer.shadowRadius = 4
+        bookingView.view.layer.shadowOpacity = 0.1
+        bookingView.view.layer.shadowColor = UIColor.gray.cgColor
+        bookingView.view.layer.shadowRadius = 50
+        bookingView.view.layer.shadowOffset = CGSize(width: 0, height: 50)
     }
 
     func addMapView(_ map: UIViewController) {

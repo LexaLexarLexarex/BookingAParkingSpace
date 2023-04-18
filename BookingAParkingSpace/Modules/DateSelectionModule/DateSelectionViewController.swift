@@ -5,6 +5,7 @@
 //  Created by Элина Карапетян on 05.04.2023.
 //
 
+import Foundation
 import UIKit
 
 protocol IDateSelectionView: AnyObject {}
@@ -13,38 +14,21 @@ class DateSelectionView: UIViewController, IDateSelectionView {
 
     let presenter: IDateSelectionPresenter
 
-    let dataDate = [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19",
-        "20",
-        "21",
-        "22",
-        "23",
-        "24",
-        "25",
-        "26",
-        "27",
-        "28",
-        "29",
-        "30",
-    ]
+    private let dataDate: [String] = {
+        var dataDate: [String] = []
+        let date = Date()
+        let calendar = Calendar.current
+
+        guard let interval = calendar.dateInterval(of: .month, for: date) else { return [] }
+        guard let days = calendar.dateComponents([.day], from: interval.start, to: interval.end).day else { return [] }
+
+        let today = calendar.component(.day, from: date)
+
+        for day in today ... days {
+            dataDate.append("\(day)")
+        }
+        return dataDate
+    }()
 
     fileprivate let collectionViewDate: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -52,6 +36,7 @@ class DateSelectionView: UIViewController, IDateSelectionView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
+        cv.contentInset = UIEdgeInsets(top: .zero, left: 15, bottom: .zero, right: 15)
         return cv
     }()
 
