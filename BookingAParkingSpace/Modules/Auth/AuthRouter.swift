@@ -17,7 +17,7 @@ final class AuthRouter: IAuthRouter {
     weak var transitionHandler: UIViewController?
 
     func openSecondaryScreen() {
-        let viewController = BookingAssembly().assemble()
+        let viewController = DaddyAssembly().assemble()
         viewController.modalPresentationStyle = .fullScreen
         transitionHandler?.present(viewController, animated: true)
     }

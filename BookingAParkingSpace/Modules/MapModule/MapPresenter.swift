@@ -9,9 +9,9 @@ protocol IMapPresenter: AnyObject {}
 
 final class MapPresenter: IMapPresenter {
     weak var view: IMapView?
-    let daddyPresenter: IBookingPresenter
+    let daddyPresenter: IDaddyPresenter
 
-    init(view: IMapView? = nil, daddyPresenter: IBookingPresenter) {
+    init(view: IMapView? = nil, daddyPresenter: IDaddyPresenter) {
         self.view = view
         self.daddyPresenter = daddyPresenter
     }
