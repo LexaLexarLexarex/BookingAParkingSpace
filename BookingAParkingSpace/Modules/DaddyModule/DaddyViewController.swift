@@ -12,7 +12,6 @@ protocol IBookingView: AnyObject {
     /// Добавляет вид карты
     func addMapView(_ map: UIViewController)
     func addBookingView(_ booking: UIViewController)
-    func startConfirmation()
 }
 
 final class DaddyViewController: UIViewController {
@@ -60,10 +59,6 @@ extension DaddyViewController: IBookingView {
             $0.leading.trailing.bottom.equalToSuperview()
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(view.frame.height / 4)
         }
-    }
-
-    func startConfirmation() {
-        print("Начали епта")
     }
 }
 

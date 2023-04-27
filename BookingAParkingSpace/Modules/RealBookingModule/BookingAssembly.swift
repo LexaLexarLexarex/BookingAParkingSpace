@@ -12,8 +12,8 @@ import UIKit
 final class BookingAssembly {
     func assemble(daddyPresenter: IDaddyPresenter) -> UIViewController {
         let presenter = BookingPresenter(daddyPresenter: daddyPresenter)
-        let dateSelectionPresenter = DateSelectionPresenter(daddyPresenter: presenter)
-        let timeSelectionPresenter = TimeSelectionPresenter(daddyPresenter: presenter)
+        let dateSelectionPresenter = DateSelectionPresenter(daddyPresenter: daddyPresenter)
+        let timeSelectionPresenter = TimeSelectionPresenter(daddyPresenter: daddyPresenter)
         let dateSelectionView = DateSelectionView(presenter: dateSelectionPresenter)
         let timeSelectionView = TimeSelectionViewController(presenter: timeSelectionPresenter)
         let view = BookingModuleController(presenter: presenter, date: dateSelectionView, time: timeSelectionView)

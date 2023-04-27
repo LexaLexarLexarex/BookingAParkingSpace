@@ -13,11 +13,11 @@ protocol IAuthPresenter {
 }
 
 final class AuthPresenter: IAuthPresenter {
-    let authService: IAuthTool & AuthToKeyChain
+    let authService: IAuthService & AuthToKeyChain
     private let router: IAuthRouter
     weak var view: IAuthView?
 
-    init(authService: IAuthTool & AuthToKeyChain, view: IAuthView? = nil, router: IAuthRouter) {
+    init(authService: IAuthService & AuthToKeyChain, view: IAuthView? = nil, router: IAuthRouter) {
         self.authService = authService
         self.view = view
         self.router = router

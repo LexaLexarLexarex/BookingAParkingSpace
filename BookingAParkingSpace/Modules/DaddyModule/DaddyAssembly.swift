@@ -9,10 +9,12 @@ import UIKit
 
 final class DaddyAssembly {
     func assemble() -> UIViewController {
-        let presenter = DaddyPresenter()
+        let router = DaddyRouter()
+        let presenter = DaddyPresenter(router: router)
         let view = DaddyViewController(presenter: presenter)
 
         presenter.view = view
+        router.transitionHandler = view
 
         let mapPresenter = MapPresenter(daddyPresenter: presenter)
         let mapView = MapViewController(presenter: mapPresenter)
