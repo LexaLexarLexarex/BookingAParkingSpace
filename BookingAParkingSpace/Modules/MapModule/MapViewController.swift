@@ -10,7 +10,7 @@ import LordOfNetwork
 import UIKit
 
 protocol IMapView: AnyObject {
-    func configureMap(with level: Level)
+    func configureMap(with level: [Spot])
     func showError(_ error: Error)
     func didSelectSpot(at point: CGPoint)
 }
@@ -74,20 +74,20 @@ extension MapViewController {
 // MARK: - IMapView
 
 extension MapViewController: IMapView {
-    func configureMap(with level: Level) {
+    func configureMap(with level: [Spot]) {
 
         view.addSubview(mapView)
         mapView.snp.makeConstraints { $0.edges.equalToSuperview() }
         mapView.delegate = self
         let shit = CALayer()
         shit.backgroundColor = UIColor.white.cgColor
-        mapView.contentSize = .init(width: level.canvas.width, height: level.canvas.height)
+        mapView.contentSize = .init(width: 1222, height: 1614)
         shit.frame = .init(
             x: 0, y: 0,
-            width: level.canvas.width,
-            height: level.canvas.height
+            width: 1222,
+            height: 1614
         )
-        layers = level.spots.compactMap { spot in
+        layers = level.compactMap { spot in
             let layer = setupSpot(spot)
             shit.addSublayer(layer)
             return layer

@@ -13,11 +13,11 @@ protocol IAuthPresenter {
 }
 
 final class AuthPresenter: IAuthPresenter {
-    let authService: IAuthTool & AuthToKeyChain
+    let authService: IAuthService & AuthToKeyChain
     private let router: IAuthRouter
     weak var view: IAuthView?
 
-    init(authService: IAuthTool & AuthToKeyChain, view: IAuthView? = nil, router: IAuthRouter) {
+    init(authService: IAuthService & AuthToKeyChain, view: IAuthView? = nil, router: IAuthRouter) {
         self.authService = authService
         self.view = view
         self.router = router
@@ -29,8 +29,9 @@ final class AuthPresenter: IAuthPresenter {
             with: a,
             completion: { result in
                 switch result {
-                case .success:
+                case .success(let model):
                     self.authService.setAuth(model: a)
+                    LON.tokenAccess = model.accessToken
                     self.router.openSecondaryScreen()
                 case .failure:
                     self.authService.removeAuth()

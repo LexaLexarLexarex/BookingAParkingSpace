@@ -11,9 +11,9 @@ protocol ITimeSelectionPresenter: AnyObject {}
 
 final class TimeSelectionPresenter: ITimeSelectionPresenter {
     weak var view: ITimeSelectionView?
-    let daddyPresenter: IBookingPresenter
+    let daddyPresenter: IDaddyPresenter
 
-    init(view: ITimeSelectionView? = nil, daddyPresenter: IBookingPresenter) {
+    init(view: ITimeSelectionView? = nil, daddyPresenter: IDaddyPresenter) {
         self.view = view
         self.daddyPresenter = daddyPresenter
     }

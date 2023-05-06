@@ -6,7 +6,9 @@ public struct LordOfNetwork {
     public static let isLexa = LordOfNetwork(
         authService: Auth()
     )
-    public private(set) var domen = "http://158.160.31.160:8080"
+    public static var tokenAccess = "none"
+    public static var tokenRefresh = "none"
+    public private(set) var domen = "http://91.185.85.37:8080"
     let request = LONService()
 
 //    {

@@ -16,10 +16,11 @@ public struct BookingMap: Codable {
 // MARK: - Level
 
 public struct Level: Codable {
+    public let id: String
+    public let buildingId: String
     public let layerName: String
     public let numberOfSpots: Int
     public let canvas: Canvas
-    public let spots: [Spot]
 }
 
 // MARK: - Canvas
@@ -31,7 +32,10 @@ public struct Canvas: Codable {
 // MARK: - Spot
 
 public struct Spot: Codable {
+    public let id: String
     public let parkingNumber: String
+    public let buildingId: String
+    public let levelId: String
     public let isAvailable, isFree: Bool
     public let canvas: Canvas
     public let onCanvasCoords: OnCanvasCoords
