@@ -29,8 +29,9 @@ final class AuthPresenter: IAuthPresenter {
             with: a,
             completion: { result in
                 switch result {
-                case .success:
+                case .success(let model):
                     self.authService.setAuth(model: a)
+                    LON.tokenAccess = model.accessToken
                     self.router.openSecondaryScreen()
                 case .failure:
                     self.authService.removeAuth()
