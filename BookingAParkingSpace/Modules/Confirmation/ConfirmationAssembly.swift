@@ -8,8 +8,8 @@
 import UIKit
 
 class ConfirmationAssembly {
-    func assemble() -> UIViewController {
-        let presenter = ConfirmationPresenter()
+    func assemble(with numberOfSpot: String, _ spotId: String, time: String) -> UIViewController {
+        let presenter = ConfirmationPresenter(attributes: [numberOfSpot, time, "ВАЗ 2114\nT251CX"])
 
         let view = ConfirmationViewController(presenter: presenter)
 

@@ -17,7 +17,7 @@ final class DaddyRouter: IDaddyRouter {
     weak var transitionHandler: UIViewController?
 
     func openConfirmationScreen(with date: String, _ time: String, _ spotId: String) {
-        let viewController = ConfirmationAssembly().assemble()
+        let viewController = ConfirmationAssembly().assemble(with: spotId, spotId, time: time)
         if let sheet = viewController.sheetPresentationController {
             sheet.detents = [.medium()]
         }
