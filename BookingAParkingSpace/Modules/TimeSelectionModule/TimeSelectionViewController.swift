@@ -72,6 +72,9 @@ extension TimeSelectionViewController: UICollectionViewDelegateFlowLayout, UICol
         else { return UICollectionViewCell() }
         cell.backgroundColor = greyColor
         cell.data = dataTime[indexPath.row]
+        cell.doSelect = {
+            self.presenter.didSelectTime(with: cell.data ?? "")
+        }
         cell.layer.cornerRadius = 12
         return cell
     }

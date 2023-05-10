@@ -19,6 +19,9 @@
 		32393D6529EF676600841494 /* ConfirmationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32393D6429EF676600841494 /* ConfirmationAssembly.swift */; };
 		32393D6729EF692C00841494 /* DaddyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32393D6629EF692C00841494 /* DaddyRouter.swift */; };
 		32A1A14629B685000056C523 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A1A14529B685000056C523 /* AuthRouter.swift */; };
+		32C33C062A0907A8007A7E49 /* AlreadyConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C33C052A0907A8007A7E49 /* AlreadyConfirmViewController.swift */; };
+		32C33C082A0907BF007A7E49 /* AlreadyConfirmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C33C072A0907BF007A7E49 /* AlreadyConfirmPresenter.swift */; };
+		32C33C0A2A0A9840007A7E49 /* AlreadyAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C33C092A0A9840007A7E49 /* AlreadyAssembly.swift */; };
 		3D1A90B129768F8200E5C988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BF25A292D35EF005710AB /* LaunchScreen.storyboard */; };
 		3D1A90B429768FCA00E5C988 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A90B329768FCA00E5C988 /* UIColor+Hex.swift */; };
 		3D1A90B62976901800E5C988 /* UIImage+fromColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A90B52976901800E5C988 /* UIImage+fromColor.swift */; };
@@ -55,6 +58,9 @@
 		32393D6429EF676600841494 /* ConfirmationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationAssembly.swift; sourceTree = "<group>"; };
 		32393D6629EF692C00841494 /* DaddyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaddyRouter.swift; sourceTree = "<group>"; };
 		32A1A14529B685000056C523 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		32C33C052A0907A8007A7E49 /* AlreadyConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlreadyConfirmViewController.swift; sourceTree = "<group>"; };
+		32C33C072A0907BF007A7E49 /* AlreadyConfirmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlreadyConfirmPresenter.swift; sourceTree = "<group>"; };
+		32C33C092A0A9840007A7E49 /* AlreadyAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlreadyAssembly.swift; sourceTree = "<group>"; };
 		3D1A90B329768FCA00E5C988 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		3D1A90B52976901800E5C988 /* UIImage+fromColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+fromColor.swift"; sourceTree = "<group>"; };
 		3D1A90B72976AA4700E5C988 /* TextField+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+extension.swift"; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 		32674E61299D55DB00660344 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				32C33C042A09078F007A7E49 /* AlreadyConfirm */,
 				32393D5F29EF672D00841494 /* Confirmation */,
 				3DAC54FF29DDA2FA0004BADD /* TimeSelectionModule */,
 				3DAC54FC29DDA0570004BADD /* DateSelectionModule */,
@@ -146,6 +153,16 @@
 				32A1A14529B685000056C523 /* AuthRouter.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		32C33C042A09078F007A7E49 /* AlreadyConfirm */ = {
+			isa = PBXGroup;
+			children = (
+				32C33C052A0907A8007A7E49 /* AlreadyConfirmViewController.swift */,
+				32C33C072A0907BF007A7E49 /* AlreadyConfirmPresenter.swift */,
+				32C33C092A0A9840007A7E49 /* AlreadyAssembly.swift */,
+			);
+			path = AlreadyConfirm;
 			sourceTree = "<group>";
 		};
 		3D1A90B229768FB000E5C988 /* Utils */ = {
@@ -327,6 +344,7 @@
 				32393D6329EF675500841494 /* ConfirmationPresenter.swift in Sources */,
 				32393D6729EF692C00841494 /* DaddyRouter.swift in Sources */,
 				3D2095B329E828F7000429E2 /* TimeSelectionPresenter.swift in Sources */,
+				32C33C082A0907BF007A7E49 /* AlreadyConfirmPresenter.swift in Sources */,
 				32355EC329A563F2002EC04D /* DaddyPresenter.swift in Sources */,
 				32355EBE29A561FE002EC04D /* MapAssembly.swift in Sources */,
 				32355EBC29A561F0002EC04D /* MapPresenter.swift in Sources */,
@@ -336,7 +354,9 @@
 				32355EC529A5640B002EC04D /* DaddyAssembly.swift in Sources */,
 				3D1A90B82976AA4700E5C988 /* TextField+extension.swift in Sources */,
 				3DAC54FE29DDA09F0004BADD /* DateSelectionViewController.swift in Sources */,
+				32C33C062A0907A8007A7E49 /* AlreadyConfirmViewController.swift in Sources */,
 				844BF24F292D35ED005710AB /* AppDelegate.swift in Sources */,
+				32C33C0A2A0A9840007A7E49 /* AlreadyAssembly.swift in Sources */,
 				3DC2702D29D5CA7200DBB4D5 /* BookingPresenter.swift in Sources */,
 				3DC57BA62989541D009EBD1E /* AuthPresenter.swift in Sources */,
 				3DC57BA429889F61009EBD1E /* UIResponder+Utils.swift in Sources */,
@@ -477,6 +497,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q6U8GY6UF5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookingAParkingSpace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -508,6 +529,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q6U8GY6UF5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookingAParkingSpace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

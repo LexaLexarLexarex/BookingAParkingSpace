@@ -5,7 +5,7 @@ import Foundation
 class Map: IMap {
     func getParkingMap(completion: @escaping (Result<[Spot], Error>) -> Void) {
         LON.isLexa.request.makeRequest(
-            for: URL(string: LON.isLexa.domen + "/parkingLevels/94d7a10b-f7c6-4d52-a156-b809f2611d52/spots")!,
+            for: URL(string: LON.isLexa.domen + "/parkingLevels/383068c5-d826-40ad-8a7b-4fc9c9b8d742/spots")!,
             method: LONService.Method.get,
             query: .path,
             headers: ["Authorization" : "Bearer \(LON.tokenAccess)"],

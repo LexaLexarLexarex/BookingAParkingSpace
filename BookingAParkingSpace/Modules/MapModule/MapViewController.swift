@@ -10,7 +10,7 @@ import LordOfNetwork
 import UIKit
 
 protocol IMapView: AnyObject {
-    func configureMap(with level: [Spot])
+    func configureMap(with level: [Spot], selectedSpot: Spot?)
     func showError(_ error: Error)
     func didSelectSpot(at point: CGPoint)
 }
@@ -74,7 +74,7 @@ extension MapViewController {
 // MARK: - IMapView
 
 extension MapViewController: IMapView {
-    func configureMap(with level: [Spot]) {
+    func configureMap(with level: [Spot], selectedSpot: Spot?) {
 
         view.addSubview(mapView)
         mapView.snp.makeConstraints { $0.edges.equalToSuperview() }
@@ -88,7 +88,7 @@ extension MapViewController: IMapView {
             height: 1614
         )
         layers = level.compactMap { spot in
-            let layer = setupSpot(spot)
+            let layer = setupSpot(spot, isSelected: spot.parkingNumber == selectedSpot?.parkingNumber)
             shit.addSublayer(layer)
             return layer
         }
@@ -108,7 +108,7 @@ extension MapViewController: IMapView {
 }
 
 private extension MapViewController {
-    func setupSpot(_ spot: Spot) -> CALayer {
+    func setupSpot(_ spot: Spot, isSelected: Bool) -> CALayer {
         let spotLayer = CALayer()
         spotLayer.frame = CGRect(
             x: spot.onCanvasCoords.x,
@@ -122,6 +122,7 @@ private extension MapViewController {
         } else {
             spotLayer.backgroundColor = .busySpot
         }
+        if isSelected { spotLayer.backgroundColor = .selectedSpot }
         spotLayer.cornerRadius = 4
 
         let textLayer = CATextLayer()
@@ -148,4 +149,5 @@ private extension CGColor {
     static let spotTextColor: CGColor = UIColor(red: 0.08, green: 0.124, blue: 0.237, alpha: 0.5).cgColor
     static let busySpot: CGColor = UIColor(red: 0.901, green: 0.906, blue: 0.913, alpha: 1).cgColor
     static let freeSpot: CGColor = UIColor(red: 0.755, green: 0.925, blue: 0.762, alpha: 1).cgColor
+    static let selectedSpot: CGColor = UIColor(red: 1, green: 0.867, blue: 0.176, alpha: 1).cgColor
 }

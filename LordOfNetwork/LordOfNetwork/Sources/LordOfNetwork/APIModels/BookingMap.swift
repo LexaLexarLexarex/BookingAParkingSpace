@@ -31,7 +31,11 @@ public struct Canvas: Codable {
 
 // MARK: - Spot
 
-public struct Spot: Codable {
+public struct Spot: Codable, Equatable {
+    public static func == (lhs: Spot, rhs: Spot) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     public let id: String
     public let parkingNumber: String
     public let buildingId: String

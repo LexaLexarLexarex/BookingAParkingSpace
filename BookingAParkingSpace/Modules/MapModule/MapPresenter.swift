@@ -18,6 +18,7 @@ final class MapPresenter: IMapPresenter {
     let daddyPresenter: IDaddyPresenter
     private var map: [Spot] = []
     private var currentLevel: [Spot]?
+    private var selectedSpot: Spot?
 
     init(view: IMapView? = nil, daddyPresenter: IDaddyPresenter) {
         self.view = view
@@ -34,7 +35,7 @@ final class MapPresenter: IMapPresenter {
                     let level = success
                     
                     self.currentLevel = level
-                    self.view?.configureMap(with: level)
+                    self.view?.configureMap(with: level, selectedSpot: selectedSpot)
                 case let .failure(failure):
                     self.view?.showError(failure)
                 }
@@ -44,7 +45,6 @@ final class MapPresenter: IMapPresenter {
 
     func didSelectSpace(at point: CGPoint) {
         guard let currentLevel else { return }
-        view?.configureMap(with: currentLevel)
         var selectedSpot: Spot?
         for spot in currentLevel {
             if point.x > CGFloat(spot.onCanvasCoords.x) &&
@@ -57,8 +57,11 @@ final class MapPresenter: IMapPresenter {
         }
         guard let selectedSpot else { return }
 
+        self.selectedSpot = selectedSpot
+        
+        view?.configureMap(with: currentLevel, selectedSpot: selectedSpot)
         if selectedSpot.isFree && selectedSpot.isAvailable {
-            daddyPresenter.didSelectSpot(with: selectedSpot.parkingNumber)
+            daddyPresenter.didSelectSpot(with: selectedSpot.parkingNumber, spoteRemoteId: selectedSpot.id)
         }
     }
 }

@@ -22,12 +22,12 @@ final class AuthAssembly {
         presenter.view = controller
         router.transitionHandler = controller
 
-//        if let log = LON.isLexa.oldAuth() {
-//            presenter.didTapEnter(
-//                login: log.login,
-//                password: log.password
-//            )
-//        }
+        if let log = LON.isLexa.oldAuth() {
+            presenter.didTapEnter(
+                login: log.login,
+                password: log.password
+            )
+        }
         return controller
     }
 }

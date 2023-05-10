@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import LordOfNetwork
 import UIKit
 
 protocol IConfirmationView: AnyObject {
     func configure(with configuration: ConfirmationViewController.Configuration)
+    func openAlreadyConfirm(with model: Reservation)
 }
 
 // MARK: - ConfirmationViewController
@@ -17,6 +19,8 @@ protocol IConfirmationView: AnyObject {
 class ConfirmationViewController: UIViewController {
     private let presenter: IConfirmationPresenter
 
+    weak var router: (IDaddyRouter)?
+    
     private var contentStackView: UIStackView = {
         let stack = UIStackView()
 
@@ -79,6 +83,19 @@ extension ConfirmationViewController {
 // MARK: - IConfirmationView
 
 extension ConfirmationViewController: IConfirmationView {
+    func openAlreadyConfirm(with model: Reservation) {
+        dismiss(animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.router?.openAlready(
+                reservation: model,
+                with: "какой-то фйди",
+                self.presenter.getConfirmationData(for: 0),
+                time: self.presenter.getConfirmationAttributes(for: 1),
+                date: self.presenter.getConfirmationAttributes(for: 1)
+            )
+        }
+    }
+    
     func configure(with configuration: Configuration) {}
 }
 

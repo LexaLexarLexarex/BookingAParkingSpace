@@ -113,6 +113,7 @@ private extension AuthViewController {
         loginTextField.initAuthTextField(placeholder: "Имя пользователя")
 
         passwordTextField.initAuthTextField(placeholder: "Пароль")
+        passwordTextField.isSecureTextEntry = true
 
         signUpStackView.axis = .vertical
         signUpStackView.spacing = 20
