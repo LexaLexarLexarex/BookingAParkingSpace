@@ -7,7 +7,9 @@
 
 import Foundation
 
-protocol ITimeSelectionPresenter: AnyObject {}
+protocol ITimeSelectionPresenter: AnyObject {
+    func didSelectTime(with time: String)
+}
 
 final class TimeSelectionPresenter: ITimeSelectionPresenter {
     weak var view: ITimeSelectionView?
@@ -16,5 +18,9 @@ final class TimeSelectionPresenter: ITimeSelectionPresenter {
     init(view: ITimeSelectionView? = nil, daddyPresenter: IDaddyPresenter) {
         self.view = view
         self.daddyPresenter = daddyPresenter
+    }
+    
+    func didSelectTime(with time: String) {
+        daddyPresenter.didSelectTime(with: time)
     }
 }

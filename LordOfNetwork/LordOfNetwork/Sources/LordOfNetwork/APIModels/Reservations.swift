@@ -8,8 +8,9 @@ import Foundation
 // MARK: - Reservations
 
 public struct Reservation: Codable {
-    let id, carID, employeeID, parkingSpotID: String
-    let startTime, endTime: String
+    public let id, carID: String?
+    public let employeeID, parkingSpotID: String?
+    public let startTime, endTime: String?
 
     public enum CodingKeys: String, CodingKey {
         case id
@@ -17,6 +18,14 @@ public struct Reservation: Codable {
         case employeeID = "employeeId"
         case parkingSpotID = "parkingSpotId"
         case startTime, endTime
+    }
+    public init(id: String?, carID: String?, employeeID: String?, parkingSpotID: String?, startTime: String?, endTime: String?) {
+        self.id = id
+        self.carID = carID
+        self.employeeID = employeeID
+        self.parkingSpotID = parkingSpotID
+        self.startTime = startTime
+        self.endTime = endTime
     }
 }
 

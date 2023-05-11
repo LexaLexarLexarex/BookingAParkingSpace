@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import LordOfNetwork
 import UIKit
 
 protocol IConfirmationView: AnyObject {
     func configure(with configuration: ConfirmationViewController.Configuration)
+    func openAlreadyConfirm(with model: Reservation)
 }
 
 // MARK: - ConfirmationViewController
@@ -17,6 +19,8 @@ protocol IConfirmationView: AnyObject {
 class ConfirmationViewController: UIViewController {
     private let presenter: IConfirmationPresenter
 
+    weak var router: (IDaddyRouter)?
+    
     private var contentStackView: UIStackView = {
         let stack = UIStackView()
 
@@ -79,22 +83,44 @@ extension ConfirmationViewController {
 // MARK: - IConfirmationView
 
 extension ConfirmationViewController: IConfirmationView {
+    func openAlreadyConfirm(with model: Reservation) {
+        dismiss(animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.router?.openAlready(
+                reservation: model,
+                with: "какой-то фйди",
+                self.presenter.getConfirmationData(for: 0),
+                time: self.presenter.getConfirmationAttributes(for: 1),
+                date: self.presenter.getConfirmationAttributes(for: 1)
+            )
+        }
+    }
+    
     func configure(with configuration: Configuration) {}
 }
 
 // MARK: - UITableViewDataSource
 
-extension ConfirmationViewController: UITableViewDataSource {
+extension ConfirmationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        3
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath)
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "cellTypeIdentifier")
+        
 
         // Configure the cell’s contents.
-        cell.textLabel!.text = "Cell text"
+        cell.textLabel!.text = presenter.getConfirmationData(for: indexPath.row)
+        cell.textLabel?.snp.updateConstraints{
+            $0.centerY.equalToSuperview()
+            $0.leading.equalTo(20)
+        }
+        cell.contentView.snp.makeConstraints{ $0.height.equalTo(self.view.frame.height/5)}
+        cell.detailTextLabel?.numberOfLines = 2
+        cell.detailTextLabel?.text = presenter.getConfirmationAttributes(for: indexPath.row)
 
+        
         return cell
     }
 }
@@ -106,7 +132,9 @@ extension ConfirmationViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellTypeIdentifier")
         tableView.dataSource = self
+        tableView.delegate = self
         view.addSubview(contentStackView)
         contentStackView.addArrangedSubview(titleLabel)
         contentStackView.addArrangedSubview(tableView)
@@ -133,8 +161,6 @@ private extension ConfirmationViewController {
         }
         tableView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
-            $0.top.equalTo(titleLabel.snp.bottom)
-            $0.bottom.equalTo(confirmButton.snp.top)
         }
     }
 }

@@ -23,6 +23,7 @@ class BookingModuleController: UIViewController {
         let date = Date()
         let dtf = DateFormatter()
         dtf.dateFormat = "LLLL"
+        dtf.locale = Locale(identifier: "ru_RU")
         var month = dtf.string(from: date)
 
         let label = UILabel()

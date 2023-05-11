@@ -62,6 +62,9 @@ extension DateSelectionView: UICollectionViewDelegateFlowLayout, UICollectionVie
         else { return UICollectionViewCell() }
         cell.backgroundColor = greyColor
         cell.data = dataDate[indexPath.row]
+        cell.doSelect = {
+            self.presenter.didSelectDate(cell.data ?? "")
+        }
         cell.layer.cornerRadius = 12
         return cell
     }
@@ -105,6 +108,8 @@ class CustomCell: UICollectionViewCell {
             bg.text = data
         }
     }
+    
+    var doSelect: (() -> Void)? = nil
 
     fileprivate let bg: UILabel = {
         let iv = UILabel()
@@ -131,6 +136,9 @@ class CustomCell: UICollectionViewCell {
             let yellowColor = UIColor(hex: 0xFFDD2D)
             let greyColor = UIColor(hex: 0xF6F7F8)
             backgroundColor = isSelected ? yellowColor : greyColor
+            if isSelected {
+                doSelect?()
+            }
         }
     }
 

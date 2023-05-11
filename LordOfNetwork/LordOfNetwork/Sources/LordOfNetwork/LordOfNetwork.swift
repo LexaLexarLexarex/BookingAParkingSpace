@@ -9,6 +9,7 @@ public struct LordOfNetwork {
     public static var tokenAccess = "none"
     public static var tokenRefresh = "none"
     public private(set) var domen = "http://91.185.85.37:8080"
+    public static var place = "B111"
     let request = LONService()
 
 //    {
@@ -19,6 +20,7 @@ public struct LordOfNetwork {
 
     let authService: IAuth
     let bookingService: IMap = Map()
+    let confirmService: IConfirm = Confirm()
 
     init(authService: IAuth) {
         self.authService = authService
